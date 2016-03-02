@@ -1,0 +1,3 @@
+describe("cos.login", function () {
+
+});

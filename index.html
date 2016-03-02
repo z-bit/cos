@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cos">
+<head>
+    <meta charset="UTF-8">
+    <title>COS</title>
+    <link rel="icon" href="assets/pictures/angularLogo200x200.png">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="app/app.css">
+    <style type="text/css">
+        /* Hide when Angular is not yet loaded and initialized */
+        [ng-cloak]{
+            display: none !important;
+        }
+    </style>
+</head>
+<body ng-cloak ng-controller="CosController as cos">
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <button class="md-icon-button md-button md-ink-ripple"
+                    type="button"
+                    ng-aria-transclude aria-label="Menu">
+                <md-icon md-svg-icon="assets/icons/ic_menu_black_24px.svg"></md-icon>
+            </button>
+            <img src="assets/pictures/angularLogo200x200.png">
+            <h1 layout="row">COS - die Care Online Schnittstelle</h1>
+            <span flex></span>
+            <img src="assets/pictures/Rechenzentrum.jpg">
+
+        </div>
+    </md-toolbar>
+
+    <md-content>
+
+        <div layout="row" layout-align="left start">
+            <div layout="column" flex="20">
+                <md-card><md-card-content>User</md-card-content></md-card>
+                <md-card><md-card-content>Auftrag</md-card-content></md-card>
+                <md-card><md-card-content>Kunde</md-card-content></md-card>
+                <md-card><md-card-content>Fahrzeug</md-card-content></md-card>
+                <md-card><md-card-content>
+                    <div layout="column">
+                        <h3>{{ cos.test }}</h3>
+                        <img src="{{ cos.pic }}">
+                    </div>
+                </md-card-content></md-card>
+            </div>
+
+            <div layout="column" flex>
+
+                <!-- EPC -->
+                <md-card><md-card-content>
+                <md-tabs>
+                    <md-tab>
+                        <md-tab-label><h3>EPC-net</h3></md-tab-label>
+                        <md-tab-body>
+                            <epc></epc>
+                        </md-tab-body>
+                    </md-tab>
+
+                    <!-- ASSYST -->
+                    <md-tab>
+                        <md-tab-label><h3>Assyst Wartungsblatt</h3></md-tab-label>
+                        <md-tab-body>
+                            <assyst></assyst>
+                        </md-tab-body>
+                    </md-tab>
+
+                    <!-- ASRA -->
+                    <md-tab>
+                        <md-tab-label><h3>ASRA-net</h3></md-tab-label>
+                        <md-tab-body>
+                            <asra></asra>
+                        </md-tab-body>
+                    </md-tab>
+
+                    <!-- PAKETE -->
+                    <md-tab>
+                        <md-tab-label><h3>Pakete</h3></md-tab-label>
+                        <md-tab-body>
+                            <pakete></pakete>
+                        </md-tab-body>
+                    </md-tab>
+
+                    <md-tab>
+                        <md-tab-label><h3>Care Info</h3></md-tab-label>
+                        <md-tab-body>
+                            <info></info>
+                        </md-tab-body>
+                    </md-tab>
+
+                    <md-tab>
+                        <md-tab-label><h3>Tobro Import</h3></md-tab-label>
+                        <md-tab-body>
+                            <tobro></tobro>
+                        </md-tab-body>
+                    </md-tab>
+
+                    <!-- ABGEMELDET -->
+                    <md-tab>
+                        <md-tab-label><h3>abmelden</h3></md-tab-label>
+                        <md-tab-body>
+                            <abgemeldet></abgemeldet>
+                        </md-tab-body>
+                    </md-tab>
+
+                </md-tabs>
+                </md-card-content></md-card>
+            </div>
+        </div>
+    </md-content>
+
+<script src="bower_components/angular-1.5.0-rc.0/angular.min.js"></script>
+<script src="bower_components/angular-1.5.0-rc.0/angular-animate.min.js"></script>
+<script src="bower_components/angular-1.5.0-rc.0/angular-aria.min.js"></script>
+<script src="bower_components/angular-1.5.0-rc.0/angular-touch.min.js"></script>
+
+<script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+
+<!--
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="bower_components/angular-touch/angular-touch.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+-->
+
+<script src="app/app.js"></script>
+<script src="app/abgemeldet/abgemeldet.js"></script>
+<script src="app/epc/epc.js"></script>
+<script src="app/assyst/assyst.js"></script>
+<script src="app/asra/asra.js"></script>
+<script src="app/pakete/pakete.js"></script>
+<script src="app/info/info.js"></script>
+<script src="app/tobro/tobro.js"></script>
+
+</body>
+</html>
